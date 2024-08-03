@@ -6,11 +6,21 @@ plugins {
 }
 
 group = "com.devsync.pixelpalettejvm"
-version = "1.0.0"
+version = "1.0.4"
 
-java {
-    withJavadocJar()
-    withSourcesJar()
+publishing {
+    publications {
+        create<MavenPublication>("release") {
+            // Use the 'java' component instead of 'release'
+            from(components["java"])
+            groupId = "com.github.DeveloperSyndicate"
+            artifactId = "pixelpalettejvm"
+            version = "1.0.4"
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
 
 java {
