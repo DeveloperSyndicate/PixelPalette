@@ -1,6 +1,6 @@
 # PixelPalette
 
-**PixelPalette** is a powerful library for extracting dominant colors from images and generating color palettes. It supports both Android and JVM environments, allowing you to seamlessly integrate it into various projects. With `PixelPalette`, you can easily find the most prominent colors in an image and create visually appealing palettes.
+**PixelPalette** is a powerful library for extracting dominant colors from images and generating color palettes. It supports both Android and JVM environments, allowing you to seamlessly integrate it into various projects. With `PixelPalette` library, you can easily find the most prominent colors in an image and create visually appealing palettes.
 
 ## Features
 
