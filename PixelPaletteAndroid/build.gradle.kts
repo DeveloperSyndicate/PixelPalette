@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.devsync.pixelpalette.android"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 23
@@ -44,9 +44,11 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.DeveloperSyndicate"
-            artifactId = "pixelpaletteandroid"
-            version = "1.0.4"
-
+            artifactId = "pixelPaletteAndroid"
+            version = "1.0.0"
+            pom {
+                description = "First release"
+            }
             afterEvaluate {
                 from(components["release"])
             }
@@ -54,6 +56,12 @@ publishing {
     }
     repositories {
         mavenLocal()
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 

@@ -14,7 +14,7 @@ publishing {
             // Use the 'java' component instead of 'release'
             from(components["java"])
             groupId = "com.github.DeveloperSyndicate"
-            artifactId = "pixelpalettejvm"
+            artifactId = "pixelPaletteJvm"
             version = "1.0.4"
         }
     }
