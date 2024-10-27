@@ -1,7 +1,10 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("maven-publish")
+    id("com.vanniktech.maven.publish") version "0.30.0"
+    id("com.gradleup.nmcp") version "0.0.7" apply false
 }
 
 android {
@@ -10,7 +13,6 @@ android {
 
     defaultConfig {
         minSdk = 23
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -24,50 +26,47 @@ android {
             )
         }
     }
+
     compileOptions {
-        val javaVersion = JavaVersion.VERSION_17
-        sourceCompatibility = javaVersion
-        targetCompatibility = javaVersion
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.DeveloperSyndicate"
-            artifactId = "pixelPaletteAndroid"
-            version = "1.0.0"
-            pom {
-                description = "First release"
-            }
-            afterEvaluate {
-                from(components["release"])
+mavenPublishing {
+    coordinates("io.github.developersyndicate", "PixelPaletteAndroid", "1.0.0")
+
+    pom {
+        name.set("Pixel Palette JVM")
+        description.set("Dominant Color extraction library for Android Applications")
+        inceptionYear.set("2024")
+        url.set("https://github.com/DeveloperSyndicate/PixelPalette")
+        licenses {
+            license {
+                name.set("The Apache License, Version 2.0")
+                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
             }
         }
+        developers {
+            developer {
+                id.set("DeveloperSyndicate")
+                name.set("Sanjay")
+                url.set("https://github.com/DeveloperSyndicate/")
+            }
+        }
+        scm {
+            url.set("https://github.com/DeveloperSyndicate/PixelPalette/")
+            connection.set("scm:git:git://github.com/DeveloperSyndicate/PixelPalette.git")
+            developerConnection.set("scm:git:ssh://git@github.com/DeveloperSyndicate/PixelPalette.git")
+        }
     }
-    repositories {
-        mavenLocal()
-    }
-}
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
 }
 
 dependencies {

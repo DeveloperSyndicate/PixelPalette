@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
     id("maven-publish")
+    id("com.vanniktech.maven.publish") version "0.30.0" apply false
+    id("com.gradleup.nmcp") version "0.0.7" apply false
 }
 
 group = "com.devsync.pixelpalettejvm"
