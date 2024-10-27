@@ -43,7 +43,7 @@ jobs:
           path: PixelPaletteAndroid/build/outputs/aar/*.aar
 
       - name: Upload JVM JAR
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jvm-artifacts
           path: PixelPaletteJvm/build/libs/*.jar
