@@ -44,5 +44,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(project(":PixelPaletteAndroid"))
+//    implementation(project(":PixelPaletteAndroid"))
+    implementation("io.github.developersyndicate:PixelPaletteAndroid:1.0.0")
 }

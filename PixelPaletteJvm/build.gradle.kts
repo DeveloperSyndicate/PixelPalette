@@ -15,7 +15,7 @@ mavenPublishing {
 
     pom {
         name.set("Pixel Palette JVM")
-        description.set("Dominant Color extraction library for JVM Applications")
+        description.set("PixelPalette is a versatile library for extracting dominant colors and generating palettes from images. Compatible with Android and JVM environments, it simplifies integrating color extraction and palette creation into your projects.")
         inceptionYear.set("2024")
         url.set("https://github.com/DeveloperSyndicate/PixelPalette")
         licenses {

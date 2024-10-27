@@ -32,7 +32,13 @@ Add the following dependency to your `build.gradle` file:
 
 ```gradle
 dependencies {
-    implementation 'com.devsync:pixelpalette:1.0.0'
+    implementation 'io.github.developersyndicate:PixelPaletteAndroid:1.0.0'
+}
+```
+
+```kotlin
+dependencies {
+    implementation("io.github.developersyndicate:PixelPaletteAndroid:1.0.0")
 }
 ```
 Replace 1.0.0 with the latest version of PixelPalette.
@@ -41,10 +47,15 @@ Replace 1.0.0 with the latest version of PixelPalette.
 Add the following to your `pom.xml`:
 ```xml
 <dependency>
-    <groupId>com.devsync</groupId>
-    <artifactId>pixelpalette</artifactId>
-    <version>1.0.0</version>
+  <groupId>io.github.developersyndicate</groupId>
+  <artifactId>PixelPaletteAndroid</artifactId>
+  <version>1.0.0</version>
 </dependency>
+```
+
+### SBT
+```
+  libraryDependencies += "io.github.developersyndicate" % "PixelPaletteJvm" % "1.0.0"
 ```
 
 ## Usage
