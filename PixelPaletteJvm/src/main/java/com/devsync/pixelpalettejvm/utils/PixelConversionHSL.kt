@@ -19,8 +19,9 @@
 
 package com.devsync.pixelpalettejvm.utils
 
-import com.devsync.pixelpaletteandroid.model.HSL
-import com.devsync.pixelpaletteandroid.model.RGB
+
+import com.devsync.pixelpalettejvm.model.HSL
+import com.devsync.pixelpalettejvm.model.RGB
 import kotlin.math.abs
 
 object PixelConversionHSL {
