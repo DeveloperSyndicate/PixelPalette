@@ -22,6 +22,28 @@ package com.devsync.pixelpaletteandroid
 import com.devsync.pixelpaletteandroid.distance.*
 import kotlin.math.*
 
+/**
+ * The `ColorDistance` object provides various methods to calculate different types of color distances
+ * between two colors, using different color models such as RGB, HSB/HSV, and CIE Lab. These methods allow
+ * for comparing colors based on Euclidean distance, perceptual differences, and chroma differences, among others.
+ * The distances are useful in various applications such as image processing, color matching, and color accuracy
+ * assessment.
+ *
+ * The following types of color distances are supported:
+ * - **Euclidean Distance (RGB)**: Measures the straight-line distance between two colors in RGB space.
+ * - **Delta E (ΔE)**: A perceptual difference metric in the CIE Lab color space, indicating how different two colors are.
+ * - **Weighted RGB Distance**: A variation of the Euclidean distance that applies different weights to the RGB components.
+ * - **CIE 94 (ΔE94)**: A more refined color difference metric in the CIE Lab color space, considering the perceptual influences of lightness, chroma, and hue.
+ * - **CIE 2000 (ΔE2000)**: An improved version of the CIE 94 formula, offering a more perceptually uniform color difference calculation.
+ * - **HSB/HSV Distance**: Measures the difference between two colors in the HSB/HSV color space.
+ * - **Manhattan Distance (RGB)**: A linear distance metric that sums the absolute differences in the RGB components.
+ * - **Mahalanobis Distance**: A multivariate distance measure that considers correlations between RGB components.
+ * - **Chroma Difference (HSB/HSV)**: Calculates the difference in chromatic intensity between two HSB/HSV colors.
+ * - **Chroma Difference (CIE Lab)**: Calculates the chromatic difference based on the a* and b* components in the CIE Lab color space.
+ *
+ * All methods validate the input color values to ensure they lie within the valid ranges for the respective color model.
+ * In case of invalid input values (e.g., RGB values out of range or negative weights), an `IllegalArgumentException` is thrown.
+ */
 object ColorDistance {
 
     /**

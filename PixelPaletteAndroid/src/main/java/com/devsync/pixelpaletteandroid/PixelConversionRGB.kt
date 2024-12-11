@@ -44,6 +44,11 @@ import com.devsync.pixelpaletteandroid.utils.xyzToLab
 import kotlin.math.cbrt
 import kotlin.math.pow
 
+/**
+ * This object provides utility functions for converting RGB values to various color models and spaces.
+ * It supports conversions to Hex, CMYK, HSB, HSL, XYZ, LAB, and more.
+ * These functions are useful for applications needing color manipulation or color space conversions.
+ */
 object PixelConversionRGB {
     /**
      * Converts RGB values to a Hex color code string.

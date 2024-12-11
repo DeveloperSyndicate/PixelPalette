@@ -24,6 +24,10 @@ import android.graphics.Color
 import com.devsync.pixelpaletteandroid.PixelConversionRGB.RGBtoHSL
 import com.devsync.pixelpaletteandroid.view.PixelConversionHSL.HSLtoRGB
 
+/**
+ * The `ColorAdjustment` object provides methods to adjust the color properties of an image represented as a `Bitmap`.
+ * It supports adjusting the color balance (Red, Green, Blue channels), brightness, contrast, and saturation of the image.
+ */
 object ColorAdjustment {
 
     /**
@@ -165,6 +169,4 @@ object ColorAdjustment {
         }
         return adjustedBitmap
     }
-
-
 }

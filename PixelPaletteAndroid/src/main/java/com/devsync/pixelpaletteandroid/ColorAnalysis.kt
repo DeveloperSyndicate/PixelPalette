@@ -27,6 +27,19 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+/**
+ * The `ColorAnalysis` object provides utility functions to generate color histograms from images.
+ * It includes both a sequential method and a parallelized method using Kotlin coroutines for improved performance.
+ *
+ * This object can be used to analyze the color distribution in an image by generating histograms of the red, green,
+ * and blue color channels. The histograms are returned as instances of the [ColorHistogram] data class.
+ *
+ * Two methods are provided for generating the histogram:
+ * - `histogram(bitmap: Bitmap)`: Generates the color histogram sequentially by iterating over all pixels in the image.
+ * - `histogram(bitmap: Bitmap, parallelChunks: Int)`: Generates the color histogram in parallel by dividing the image into chunks and processing each chunk concurrently using Kotlin Coroutines.
+ *
+ * The color histograms are useful for various image processing tasks, such as color analysis, image enhancement, and feature extraction.
+ */
 object ColorAnalysis {
     /**
      * Data class representing the color histogram of an image with individual histograms for red, green, and blue channels.

@@ -23,6 +23,10 @@ import com.devsync.pixelpaletteandroid.PixelConversionRGB.RGBtoHSL
 import com.devsync.pixelpaletteandroid.model.RGB
 import com.devsync.pixelpaletteandroid.view.PixelConversionHSL.HSLtoRGB
 
+/**
+ * Provides various color manipulation operations such as tinting, blending, shading, and toning of colors.
+ * These operations are based on additive and subtractive color models, and can be applied to RGB colors.
+ */
 object ColorBending {
 
     /**

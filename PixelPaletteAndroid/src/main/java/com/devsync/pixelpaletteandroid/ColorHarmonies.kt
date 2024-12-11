@@ -21,7 +21,21 @@ package com.devsync.pixelpaletteandroid
 
 import com.devsync.pixelpaletteandroid.model.RGB
 
-
+/**
+ * A utility object that provides methods to generate various color schemes based on a base color.
+ * These color schemes are designed to help create harmonious color palettes for use in design,
+ * UI development, and other color-related tasks.
+ *
+ * The following color schemes are supported:
+ * - **Monochromatic**: Shades and tints of the base color.
+ * - **Analogous**: Colors adjacent to the base color on the color wheel.
+ * - **Complementary**: The base color and its complementary color (opposite on the color wheel).
+ * - **Triadic**: Three colors evenly spaced around the color wheel.
+ * - **Tetradic**: Two complementary color pairs.
+ * - **Square**: Four colors evenly spaced around the color wheel.
+ *
+ * Each method generates a list of `RGB` colors representing the corresponding color scheme.
+ */
 object ColorHarmonies {
 
     /**

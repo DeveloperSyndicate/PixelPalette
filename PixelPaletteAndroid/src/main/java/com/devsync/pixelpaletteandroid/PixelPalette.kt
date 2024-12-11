@@ -27,6 +27,23 @@ import com.devsync.pixelpaletteandroid.utils.ColorLab.kMeans
 import com.devsync.pixelpaletteandroid.utils.PixelPaletteUtil.displayPalette
 import com.devsync.pixelpaletteandroid.utils.PixelPaletteUtil.downscaleBitmap
 
+/**
+ * The PixelPalette object provides methods to analyze and extract dominant colors from an image
+ * using K-means clustering. It allows for downscaling the image to improve performance, followed
+ * by the identification of the most prominent colors. Additionally, the object can generate a color
+ * palette image based on the extracted dominant colors.
+ *
+ * The two primary functions of this object are:
+ * 1. `dominantColors`: Extracts the most dominant colors from the provided image.
+ * 2. `createPalette`: Generates a color palette from the image and optionally saves the palette image.
+ *
+ * The K-means clustering algorithm is used in both functions to identify the most representative
+ * colors from the image data. The image is downscaled before processing to improve performance,
+ * with the option to adjust the level of downscaling.
+ *
+ * @see dominantColors
+ * @see createPalette
+ */
 object PixelPalette {
 
     /**

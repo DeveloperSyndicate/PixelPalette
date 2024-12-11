@@ -93,4 +93,54 @@ object PixelConversionHSL {
 
         return intArrayOf(red, green, blue)
     }
+
+    fun HSLtoRGB(hsl: HSL): RGB {
+        val c = (1 - abs(2 * hsl.lightness - 1f)) * hsl.saturation
+        val x = c * (1 - abs((hsl.hue / 60f) % 2 - 1))
+        val m = hsl.lightness - c / 2
+
+        var r = 0f
+        var g = 0f
+        var b = 0f
+
+        when {
+            hsl.hue in 0f..60f -> {
+                r = c
+                g = x
+                b = 0f
+            }
+            hsl.hue in 60f..120f -> {
+                r = x
+                g = c
+                b = 0f
+            }
+            hsl.hue in 120f..180f -> {
+                r = 0f
+                g = c
+                b = x
+            }
+            hsl.hue in 180f..240f -> {
+                r = 0f
+                g = x
+                b = c
+            }
+            hsl.hue in 240f..300f -> {
+                r = x
+                g = 0f
+                b = c
+            }
+            hsl.hue in 300f..360f -> {
+                r = c
+                g = 0f
+                b = x
+            }
+        }
+
+        r = (r + m) * 255
+        g = (g + m) * 255
+        b = (b + m) * 255
+
+        return RGB(r.toInt(), g.toInt(), b.toInt())
+    }
+
 }
