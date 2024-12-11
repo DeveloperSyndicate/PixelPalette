@@ -9,7 +9,6 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.3"
 constraintlayout = "2.2.0"
-jetbrainsKotlinJvm = "2.0.20"
 mavenPublish = "0.30.0"
 gradleUp = "0.0.7"
 
@@ -27,7 +26,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 maven-publish = { id= "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 gradle-up = { id = "com.gradleup.nmcp", version.ref = "gradleUp" }
 java-library = { id = "java-library" }
