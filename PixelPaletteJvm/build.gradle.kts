@@ -1,17 +1,17 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
-    id("java-library")
+    alias(libs.plugins.java.library)
     alias(libs.plugins.jetbrains.kotlin.jvm)
-    id("com.vanniktech.maven.publish") version "0.30.0"
-    id("com.gradleup.nmcp") version "0.0.7" apply false
+    alias(libs.plugins.maven.publish)
+    alias(libs.plugins.gradle.up)
 }
 
 group = "com.devsync.pixelpalettejvm"
-version = "1.0.0"
+version = "1.0.1-alpha"
 
 mavenPublishing {
-    coordinates("io.github.developersyndicate", "PixelPaletteJvm", "1.0.0")
+    coordinates("io.github.developersyndicate", "PixelPaletteJvm", "1.0.1-alpha")
 
     pom {
         name.set("Pixel Palette JVM")
@@ -44,6 +44,6 @@ mavenPublishing {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
