@@ -19,4 +19,4 @@
 
 package com.devsync.pixelpaletteandroid.model
 
-data class HSL(var hue: Float, val saturation: Float, var lightness: Float)
+data class HSL(var hue: Float, var saturation: Float, var lightness: Float)

@@ -41,57 +41,56 @@ object PixelConversionHSL {
      *            `saturation` and `lightness` should be between 0 and 1.
      * @return The resulting `RGB` color after conversion. The RGB values are in the range 0-255.
      */
-    fun HSLtoRGB(hsl: HSL): RGB {
-        val c = (1 - abs(2 * hsl.lightness - 1f)) * hsl.saturation
-        val x = c * (1 - abs((hsl.hue / 60f) % 2 - 1))
-        val m = hsl.lightness - c / 2
+    fun HSLtoRGB(hsl: FloatArray): IntArray {
+        val h = hsl[0]
+        val s = hsl[1]
+        val l = hsl[2]
+
+        val c = (1 - abs(2 * l - 1f)) * s
+        val x = c * (1 - abs((h / 60f) % 2 - 1))
+        val m = l - c / 2
 
         var r = 0f
         var g = 0f
         var b = 0f
 
-        when (hsl.hue) {
+        when (h) {
             in 0f..60f -> {
                 r = c
                 g = x
                 b = 0f
             }
-
             in 60f..120f -> {
                 r = x
                 g = c
                 b = 0f
             }
-
             in 120f..180f -> {
                 r = 0f
                 g = c
                 b = x
             }
-
             in 180f..240f -> {
                 r = 0f
                 g = x
                 b = c
             }
-
             in 240f..300f -> {
                 r = x
                 g = 0f
                 b = c
             }
-
-            in 300f..360f -> {
+            else -> {
                 r = c
                 g = 0f
                 b = x
             }
         }
 
-        r = (r + m) * 255
-        g = (g + m) * 255
-        b = (b + m) * 255
+        val red = ((r + m) * 255).toInt()
+        val green = ((g + m) * 255).toInt()
+        val blue = ((b + m) * 255).toInt()
 
-        return RGB(r.toInt(), g.toInt(), b.toInt())
+        return intArrayOf(red, green, blue)
     }
 }
