@@ -17,11 +17,12 @@
  * Date: 11-12-2024
  */
 
-package com.devsync.pixelpaletteandroid
+package com.devsync.pixelpalettejvm
 
-import com.devsync.pixelpaletteandroid.PixelConversionRGB.RGBtoHSL
-import com.devsync.pixelpaletteandroid.model.RGB
-import com.devsync.pixelpaletteandroid.view.PixelConversionHSL.HSLtoRGB
+import com.devsync.pixelpalettejvm.PixelConversionRGB.RGBtoHSL
+import com.devsync.pixelpalettejvm.model.RGB
+import com.devsync.pixelpalettejvm.utils.PixelConversionHSL.HSLtoRGB
+
 
 /**
  * Provides various color manipulation operations such as tinting, blending, shading, and toning of colors.

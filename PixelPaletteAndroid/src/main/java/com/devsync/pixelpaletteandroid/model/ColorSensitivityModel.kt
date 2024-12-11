@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  * Author: Sanjay S
- * Date: 03-08-2024
+ * Date: 11-12-2024
  */
 
 package com.devsync.pixelpaletteandroid.model

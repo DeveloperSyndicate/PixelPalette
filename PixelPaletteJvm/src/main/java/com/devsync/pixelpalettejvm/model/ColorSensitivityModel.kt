@@ -14,9 +14,13 @@
  * limitations under the License.
  *
  * Author: Sanjay S
- * Date: 03-08-2024
+ * Date: 11-12-2024
  */
 
 package com.devsync.pixelpalettejvm.model
 
-data class HSL(var hue: Float, val saturation: Float, var lightness: Float)
+data class ColorSensitivityModel(
+    var red: Float = 1f,
+    var green: Float = 1f,
+    var blue: Float = 1f
+)

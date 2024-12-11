@@ -17,29 +17,16 @@
  * Date: 11-12-2024
  */
 
-package com.devsync.pixelpaletteandroid
+package com.devsync.pixelpalettejvm
 
-import android.graphics.Bitmap
-import android.graphics.Color
+import java.awt.Color
+import java.awt.image.BufferedImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/**
- * The `ColorAnalysis` object provides utility functions to generate color histograms from images.
- * It includes both a sequential method and a parallelized method using Kotlin coroutines for improved performance.
- *
- * This object can be used to analyze the color distribution in an image by generating histograms of the red, green,
- * and blue color channels. The histograms are returned as instances of the [ColorHistogram] data class.
- *
- * Two methods are provided for generating the histogram:
- * - `histogram(bitmap: Bitmap)`: Generates the color histogram sequentially by iterating over all pixels in the image.
- * - `histogram(bitmap: Bitmap, parallelChunks: Int)`: Generates the color histogram in parallel by dividing the image into chunks and processing each chunk concurrently using Kotlin Coroutines.
- *
- * The color histograms are useful for various image processing tasks, such as color analysis, image enhancement, and feature extraction.
- */
 object ColorAnalysis {
     /**
      * Data class representing the color histogram of an image with individual histograms for red, green, and blue channels.
@@ -56,21 +43,21 @@ object ColorAnalysis {
      * This method processes the entire image sequentially, scanning each pixel and incrementing the corresponding
      * histogram bins for red, green, and blue color channels.
      *
-     * @param bitmap The bitmap image from which the histogram is generated.
+     * @param image The image (BufferedImage) from which the histogram is generated.
      * @return A [ColorHistogram] object containing the frequency of red, green, and blue values in the image.
      */
-    fun histogram(bitmap: Bitmap): ColorHistogram {
+    fun histogram(image: BufferedImage): ColorHistogram {
         val redHistogram = IntArray(256)
         val greenHistogram = IntArray(256)
         val blueHistogram = IntArray(256)
 
-        for (y in 0 until bitmap.height) {
-            for (x in 0 until bitmap.width) {
-                val pixel = bitmap.getPixel(x, y)
+        for (y in 0 until image.height) {
+            for (x in 0 until image.width) {
+                val pixel = image.getRGB(x, y)
 
-                val red = Color.red(pixel)
-                val green = Color.green(pixel)
-                val blue = Color.blue(pixel)
+                val red = Color(pixel).red
+                val green = Color(pixel).green
+                val blue = Color(pixel).blue
 
                 redHistogram[red]++
                 greenHistogram[green]++
@@ -87,33 +74,38 @@ object ColorAnalysis {
      * This method splits the image into multiple horizontal chunks and processes each chunk concurrently using Kotlin Coroutines.
      * The result is a color histogram with the frequency of red, green, and blue values, calculated in parallel.
      *
-     * @param bitmap The bitmap image from which the histogram is generated.
+     * @param image The image (BufferedImage) from which the histogram is generated.
      * @param parallelChunks The number of chunks to split the image into for parallel processing. The more chunks, the greater the level of parallelism.
      * @return A [ColorHistogram] object containing the frequency of red, green, and blue values in the image.
      * @throws [ArithmeticException] If the number of chunks is invalid (e.g., less than 1 or greater than the image height).
      */
-    suspend fun histogram(bitmap: Bitmap, parallelChunks: Int): ColorHistogram = withContext(Dispatchers.Default) {
+    suspend fun histogram(image: BufferedImage, parallelChunks: Int): ColorHistogram = withContext(Dispatchers.Default) {
         val redHistogram = IntArray(256)
         val greenHistogram = IntArray(256)
         val blueHistogram = IntArray(256)
 
-        val rowCount = bitmap.height
+        val rowCount = image.height
         val chunkSize = rowCount / parallelChunks
+
+        if (parallelChunks < 1 || parallelChunks > rowCount) {
+            throw ArithmeticException("Invalid number of chunks: $parallelChunks")
+        }
 
         coroutineScope {
             val jobs = mutableListOf<Job>()
 
-            for (i in 0 until 4) {
+            for (i in 0 until parallelChunks) {
                 val startRow = i * chunkSize
-                val endRow = if (i == 3) rowCount else (i + 1) * chunkSize
+                val endRow = if (i == parallelChunks - 1) rowCount else (i + 1) * chunkSize
 
                 jobs.add(launch {
                     for (y in startRow until endRow) {
-                        for (x in 0 until bitmap.width) {
-                            val pixel = bitmap.getPixel(x, y)
-                            val red = Color.red(pixel)
-                            val green = Color.green(pixel)
-                            val blue = Color.blue(pixel)
+                        for (x in 0 until image.width) {
+                            val pixel = image.getRGB(x, y)
+                            val red = Color(pixel).red
+                            val green = Color(pixel).green
+                            val blue = Color(pixel).blue
+
                             redHistogram[red]++
                             greenHistogram[green]++
                             blueHistogram[blue]++
@@ -125,5 +117,4 @@ object ColorAnalysis {
         }
         ColorHistogram(redHistogram, greenHistogram, blueHistogram)
     }
-
 }

@@ -14,9 +14,23 @@
  * limitations under the License.
  *
  * Author: Sanjay S
- * Date: 03-08-2024
+ * Date: 11-12-2024
  */
 
-package com.devsync.pixelpalettejvm.model
+package com.devsync.pixelpalettejvm.distance
 
-data class HSL(var hue: Float, val saturation: Float, var lightness: Float)
+
+/**
+ * Calculates the chroma of a color in the RGB color space.
+ *
+ * Chroma is the difference between the maximum and minimum values of the RGB components.
+ *
+ * @param color The color to calculate the chroma for, represented as an array of three floats [R, G, B].
+ *
+ * @return A `Double` representing the chroma of the color.
+ */
+fun calculateChroma(color: FloatArray): Double {
+    val maxColor = color.maxOrNull() ?: 0.0f
+    val minColor = color.minOrNull() ?: 0.0f
+    return (maxColor - minColor).toDouble()
+}

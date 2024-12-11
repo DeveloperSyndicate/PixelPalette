@@ -17,9 +17,10 @@
  * Date: 11-12-2024
  */
 
-package com.devsync.pixelpaletteandroid
+package com.devsync.pixelpalettejvm
 
-import com.devsync.pixelpaletteandroid.model.RGB
+import com.devsync.pixelpalettejvm.model.RGB
+
 
 /**
  * A utility object that provides methods to generate various color schemes based on a base color.

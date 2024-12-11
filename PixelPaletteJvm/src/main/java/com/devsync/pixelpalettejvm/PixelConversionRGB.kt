@@ -44,13 +44,32 @@ import com.devsync.pixelpalettejvm.utils.xyzToLab
 import kotlin.math.cbrt
 import kotlin.math.pow
 
+/**
+ * This object provides utility functions for converting RGB values to various color models and spaces.
+ * It supports conversions to Hex, CMYK, HSB, HSL, XYZ, LAB, and more.
+ * These functions are useful for applications needing color manipulation or color space conversions.
+ */
 object PixelConversionRGB {
-    //HEX
+    /**
+     * Converts RGB values to a Hex color code string.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @return A string representing the color in Hex format (e.g., "#RRGGBB").
+     */
     fun RGBtoHex(red: Int, green: Int, blue: Int): String {
         return String.format("#%02X%02X%02X", red, green, blue)
     }
 
-    //CMYK
+    /**
+     * Converts RGB values to CMYK color model.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @return A CMYK object representing the color in the CMYK color model.
+     */
     fun RGBtoCMYK(red: Int, green: Int, blue: Int): CMYK {
         val rNorm = red / 255.0
         val gNorm = green / 255.0
@@ -64,7 +83,14 @@ object PixelConversionRGB {
         return CMYK(c, m, y, k)
     }
 
-    //HSB
+    /**
+     * Converts RGB values to HSB (Hue, Saturation, Brightness) color model.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @return An HSB object representing the color in the HSB color model.
+     */
     fun RGBtoHSB(red: Int, green: Int, blue: Int): HSB {
         val rNorm = red / 255.0
         val gNorm = green / 255.0
@@ -87,7 +113,14 @@ object PixelConversionRGB {
         return HSB(hue, saturation, brightness)
     }
 
-    //HSL
+    /**
+     * Converts RGB values to HSL (Hue, Saturation, Lightness) color model.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @return An HSL object representing the color in the HSL color model.
+     */
     fun RGBtoHSL(red: Int, green: Int, blue: Int): HSL {
         val rNorm = red / 255.0
         val gNorm = green / 255.0
@@ -110,15 +143,23 @@ object PixelConversionRGB {
         return HSL(hue, saturation.toFloat(), lightness.toFloat())
     }
 
-    //XYZ
+    /**
+     * Converts RGB values to XYZ color space.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @param scale A scaling factor for the output XYZ values (default is 100).
+     * @return An XYZ object representing the color in the XYZ color space.
+     */
     fun RGBtoXYZ(red: Int, green: Int, blue: Int, scale: Int = 100): XYZ {
         val rNorm = red / 255.0
         val gNorm = green / 255.0
         val bNorm = blue / 255.0
 
-        val rLinear = if (rNorm > 0.04045) Math.pow((rNorm + 0.055) / 1.055, 2.4) else rNorm / 12.92
-        val gLinear = if (gNorm > 0.04045) Math.pow((gNorm + 0.055) / 1.055, 2.4) else gNorm / 12.92
-        val bLinear = if (bNorm > 0.04045) Math.pow((bNorm + 0.055) / 1.055, 2.4) else bNorm / 12.92
+        val rLinear = if (rNorm > 0.04045) ((rNorm + 0.055) / 1.055).pow(2.4) else rNorm / 12.92
+        val gLinear = if (gNorm > 0.04045) ((gNorm + 0.055) / 1.055).pow(2.4) else gNorm / 12.92
+        val bLinear = if (bNorm > 0.04045) ((bNorm + 0.055) / 1.055).pow(2.4) else bNorm / 12.92
 
         val x = rLinear * 0.4124 + gLinear * 0.3576 + bLinear * 0.1805
         val y = rLinear * 0.2126 + gLinear * 0.7152 + bLinear * 0.0722
@@ -127,7 +168,14 @@ object PixelConversionRGB {
         return XYZ(x * scale, y * scale, z * scale)
     }
 
-    //LAB
+    /**
+     * Converts RGB values to LAB color model.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return A LAB object representing the color in the LAB color model.
+     */
     fun RGBtoLAB(r: Int, g: Int, b: Int): LAB {
         val rNorm = r / 255.0
         val gNorm = g / 255.0
@@ -168,16 +216,32 @@ object PixelConversionRGB {
         return LAB(l, a, b)
     }
 
-    //Pantone Colors
-    fun RGBToPantone(red: Int, green: Int, blue: Int, pantones: List<Pantone>): Pantone? {
+    /**
+     * Converts RGB values to the closest matching Pantone color.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @param pantones A list of Pantone colors to compare against.
+     * @return The Pantone color closest to the given RGB values.
+     */
+    fun RGBToPantone(red: Int, green: Int, blue: Int, pantones: List<Pantone>): Pantone {
         val targetLab = rgbToLab(red, green, blue)
-        return pantones.minByOrNull { pantoneColor ->
+        return pantones.minBy { pantoneColor ->
             val pantoneLab = rgbToLab(pantoneColor.red, pantoneColor.green, pantoneColor.blue)
             labDistance(targetLab, pantoneLab)
         }
     }
 
-    //RAL Colors
+    /**
+     * Converts RGB values to the closest matching RAL color.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @param ral A list of RAL colors to compare against.
+     * @return The RAL color closest to the given RGB values.
+     */
     fun RGBtoRAL(red: Int, green: Int, blue: Int, ral: List<RAL>): RAL {
         val inputLab = rgbToLab(red, green, blue)
 
@@ -187,7 +251,15 @@ object PixelConversionRGB {
         }
     }
 
-    //Munsell
+    /**
+     * Converts RGB values to the closest matching Munsell color.
+     *
+     * @param red The red component of the RGB color (0-255).
+     * @param green The green component of the RGB color (0-255).
+     * @param blue The blue component of the RGB color (0-255).
+     * @param munsellDatabase A list of Munsell colors to compare against.
+     * @return The Munsell color closest to the given RGB values.
+     */
     fun RGBtoMunsell(
         red: Int,
         green: Int,
@@ -199,7 +271,14 @@ object PixelConversionRGB {
         return labToMunsell(lab, munsellDatabase)
     }
 
-    //HWB
+    /**
+     * Converts RGB values to HWB (Hue, White, Black) color model.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return An HWB object representing the color in the HWB color model.
+     */
     fun RGBtoHWB(r: Int, g: Int, b: Int): HWB {
         val rNorm = r / 255.0
         val gNorm = g / 255.0
@@ -222,14 +301,28 @@ object PixelConversionRGB {
         return HWB(hue, white, black)
     }
 
-    //sRGB
+    /**
+     * Converts RGB values to sRGB (standard RGB) color model.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return An SRGB object representing the color in the sRGB color model.
+     */
     fun rgbToSRgb(r: Int, g: Int, b: Int): SRGB {
         val (rLinear, gLinear, bLinear) = rgbToLinearRgb(r, g, b)
         val (rFinal, gFinal, bFinal) = linearRgbToSrgb(rLinear, gLinear, bLinear)
         return SRGB(rFinal, gFinal, bFinal)
     }
 
-    //AdobeRGB
+    /**
+     * Converts RGB values to AdobeRGB color space.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return An XYZ object representing the color in the AdobeRGB color space.
+     */
     fun RGBToAdobeRGB(r: Int, g: Int, b: Int): XYZ {
         val rNorm = r / 255.0
         val gNorm = g / 255.0
@@ -246,7 +339,14 @@ object PixelConversionRGB {
         return XYZ(x, y, z)
     }
 
-    //Rec2020
+    /**
+     * Converts RGB values to Rec. 2020 color space.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return A Rec2020 object representing the color in the Rec. 2020 color space.
+     */
     fun rgbToRec2020(r: Int, g: Int, b: Int): Rec2020 {
         val rNorm = r / 255.0
         val gNorm = g / 255.0
@@ -273,7 +373,14 @@ object PixelConversionRGB {
         return Rec2020(x, y, z)
     }
 
-    //CIELUV
+    /**
+     * Converts RGB values to CIELUV color space.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return A CIELUV object representing the color in the CIELUV color space.
+     */
     fun RGBtoCIELUV(r: Int, g: Int, b: Int): CIELUV {
         val rNorm = r / 255.0
         val gNorm = g / 255.0
@@ -321,12 +428,16 @@ object PixelConversionRGB {
         return CIELUV(l, u, v)
     }
 
-    //CIELCH
+    /**
+     * Converts RGB values to CIELCH color space.
+     *
+     * @param r The red component of the RGB color (0-255).
+     * @param g The green component of the RGB color (0-255).
+     * @param b The blue component of the RGB color (0-255).
+     * @return A CIELCH object representing the color in the CIELCH color space.
+     */
     fun RGBtoCIELCH(r: Int, g: Int, b: Int): CIELCH {
         val lab = com.devsync.pixelpalettejvm.cielch.rgbToLab(r, g, b)
         return labToLch(lab)
     }
-
-
-
 }
