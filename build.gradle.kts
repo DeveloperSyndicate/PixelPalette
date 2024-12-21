@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
     alias(libs.plugins.maven.publish) apply false
     alias(libs.plugins.gradle.up) apply false
+    alias(libs.plugins.dokka) apply false
 }
 
 group = "com.devsync.pixelpalettejvm"

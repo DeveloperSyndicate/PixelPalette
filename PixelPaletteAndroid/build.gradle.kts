@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.maven.publish)
     alias(libs.plugins.gradle.up)
+    alias(libs.plugins.dokka)
 }
 
 android {
@@ -29,17 +30,17 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "21"
+        jvmTarget = "17"
     }
 }
 
 mavenPublishing {
-    coordinates("io.github.developersyndicate", "PixelPaletteAndroid", "1.0.1-alpha")
+    coordinates("io.github.developersyndicate", "PixelPaletteAndroid", "1.0.2")
 
     pom {
         name.set("Pixel Palette JVM")

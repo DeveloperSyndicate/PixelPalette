@@ -5,13 +5,14 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.jvm)
     alias(libs.plugins.maven.publish)
     alias(libs.plugins.gradle.up)
+    alias(libs.plugins.dokka)
 }
 
 group = "com.devsync.pixelpalettejvm"
-version = "1.0.1-alpha"
+version = "1.0.2"
 
 mavenPublishing {
-    coordinates("io.github.developersyndicate", "PixelPaletteJvm", "1.0.1-alpha")
+    coordinates("io.github.developersyndicate", "PixelPaletteJvm", "1.0.2")
 
     pom {
         name.set("Pixel Palette JVM")
@@ -44,8 +45,8 @@ mavenPublishing {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {

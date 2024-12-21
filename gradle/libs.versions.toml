@@ -12,6 +12,7 @@ activity = "1.9.3"
 constraintlayout = "2.2.0"
 mavenPublish = "0.30.0"
 gradleUp = "0.0.7"
+dokka = "2.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,5 +33,6 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 maven-publish = { id= "com.vanniktech.maven.publish", version.ref = "mavenPublish" }
 gradle-up = { id = "com.gradleup.nmcp", version.ref = "gradleUp" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 java-library = { id = "java-library" }
 
