@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>PixelConversionRGB</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    PixelPaletteAndroid
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":PixelPaletteAndroid:dokkaHtml/release">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":PixelPaletteAndroid:dokkaHtml/release"
+                                       data-filter=":PixelPaletteAndroid:dokkaHtml/release"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    PixelPaletteAndroid
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="PixelPaletteAndroid::com.devsync.pixelpaletteandroid/PixelConversionRGB///PointingToDeclaration//1852433370">
+  <div class="breadcrumbs"><a href="../../../index.html">PixelPaletteAndroid</a><span class="delimiter">/</span><a href="../index.html">com.devsync.pixelpaletteandroid</a><span class="delimiter">/</span><span class="current">PixelConversionRGB</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Pixel</span><wbr></wbr><span>Conversion</span><wbr></wbr><span><span>RGB</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="index.html">PixelConversionRGB</a></div><p class="paragraph">This object provides utility functions for converting RGB values to various color models and spaces. It supports conversions to Hex, CMYK, HSB, HSL, XYZ, LAB, and more. These functions are useful for applications needing color manipulation or color space conversions.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1332391533%2FFunctions%2F1852433370" anchor-label="RGBToAdobeRGB" id="-1332391533%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-b-to-adobe-r-g-b.html"><span>RGBTo</span><wbr></wbr><span>Adobe</span><wbr></wbr><span><span>RGB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1332391533%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-b-to-adobe-r-g-b.html"><span class="token function">RGBToAdobeRGB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-x-y-z/index.html">XYZ</a></div><div class="brief "><p class="paragraph">Converts RGB values to AdobeRGB color space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-908089985%2FFunctions%2F1852433370" anchor-label="RGBtoCIELCH" id="-908089985%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-c-i-e-l-c-h.html"><span>RGBto</span><wbr></wbr><span><span>CIELCH</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-908089985%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-c-i-e-l-c-h.html"><span class="token function">RGBtoCIELCH</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-c-i-e-l-c-h/index.html">CIELCH</a></div><div class="brief "><p class="paragraph">Converts RGB values to CIELCH color space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1415622973%2FFunctions%2F1852433370" anchor-label="RGBtoCIELUV" id="-1415622973%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-c-i-e-l-u-v.html"><span>RGBto</span><wbr></wbr><span><span>CIELUV</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1415622973%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-c-i-e-l-u-v.html"><span class="token function">RGBtoCIELUV</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-c-i-e-l-u-v/index.html">CIELUV</a></div><div class="brief "><p class="paragraph">Converts RGB values to CIELUV color space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-466226699%2FFunctions%2F1852433370" anchor-label="RGBtoCMYK" id="-466226699%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-c-m-y-k.html"><span>RGBto</span><wbr></wbr><span><span>CMYK</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-466226699%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-c-m-y-k.html"><span class="token function">RGBtoCMYK</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-c-m-y-k/index.html">CMYK</a></div><div class="brief "><p class="paragraph">Converts RGB values to CMYK color model.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-637667158%2FFunctions%2F1852433370" anchor-label="RGBtoHex" id="-637667158%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-hex.html"><span>RGBto</span><wbr></wbr><span><span>Hex</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-637667158%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-hex.html"><span class="token function">RGBtoHex</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Converts RGB values to a Hex color code string.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-214781298%2FFunctions%2F1852433370" anchor-label="RGBtoHSB" id="-214781298%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-h-s-b.html"><span>RGBto</span><wbr></wbr><span><span>HSB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-214781298%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-h-s-b.html"><span class="token function">RGBtoHSB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-h-s-b/index.html">HSB</a></div><div class="brief "><p class="paragraph">Converts RGB values to HSB (Hue, Saturation, Brightness) color model.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1953864132%2FFunctions%2F1852433370" anchor-label="RGBtoHSL" id="1953864132%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-h-s-l.html"><span>RGBto</span><wbr></wbr><span><span>HSL</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1953864132%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-h-s-l.html"><span class="token function">RGBtoHSL</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-h-s-l/index.html">HSL</a></div><div class="brief "><p class="paragraph">Converts RGB values to HSL (Hue, Saturation, Lightness) color model.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="906618258%2FFunctions%2F1852433370" anchor-label="RGBtoHWB" id="906618258%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-h-w-b.html"><span>RGBto</span><wbr></wbr><span><span>HWB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="906618258%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-h-w-b.html"><span class="token function">RGBtoHWB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-h-w-b/index.html">HWB</a></div><div class="brief "><p class="paragraph">Converts RGB values to HWB (Hue, White, Black) color model.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-562464136%2FFunctions%2F1852433370" anchor-label="RGBtoLAB" id="-562464136%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-l-a-b.html"><span>RGBto</span><wbr></wbr><span><span>LAB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-562464136%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-l-a-b.html"><span class="token function">RGBtoLAB</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-l-a-b/index.html">LAB</a></div><div class="brief "><p class="paragraph">Converts RGB values to LAB color model.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="413171033%2FFunctions%2F1852433370" anchor-label="RGBtoMunsell" id="413171033%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-munsell.html"><span>RGBto</span><wbr></wbr><span><span>Munsell</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="413171033%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-munsell.html"><span class="token function">RGBtoMunsell</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">munsellDatabase<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.devsync.pixelpaletteandroid.model/-munsell-color/index.html">MunsellColor</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-munsell/index.html">Munsell</a></div><div class="brief "><p class="paragraph">Converts RGB values to the closest matching Munsell color.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1119000672%2FFunctions%2F1852433370" anchor-label="RGBToPantone" id="-1119000672%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-b-to-pantone.html"><span>RGBTo</span><wbr></wbr><span><span>Pantone</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1119000672%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-b-to-pantone.html"><span class="token function">RGBToPantone</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">pantones<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.devsync.pixelpaletteandroid.model/-pantone/index.html">Pantone</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-pantone/index.html">Pantone</a></div><div class="brief "><p class="paragraph">Converts RGB values to the closest matching Pantone color.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2005075804%2FFunctions%2F1852433370" anchor-label="RGBtoRAL" id="2005075804%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-r-a-l.html"><span>RGBto</span><wbr></wbr><span><span>RAL</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2005075804%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-r-a-l.html"><span class="token function">RGBtoRAL</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">ral<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><a href="../../com.devsync.pixelpaletteandroid.model/-r-a-l/index.html">RAL</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-r-a-l/index.html">RAL</a></div><div class="brief "><p class="paragraph">Converts RGB values to the closest matching RAL color.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-784587111%2FFunctions%2F1852433370" anchor-label="rgbToRec2020" id="-784587111%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="rgb-to-rec2020.html"><span>rgb</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Rec2020</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-784587111%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="rgb-to-rec2020.html"><span class="token function">rgbToRec2020</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-rec2020/index.html">Rec2020</a></div><div class="brief "><p class="paragraph">Converts RGB values to Rec. 2020 color space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1796132617%2FFunctions%2F1852433370" anchor-label="rgbToSRgb" id="-1796132617%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="rgb-to-s-rgb.html"><span>rgb</span><wbr></wbr><span>To</span><wbr></wbr><span><span>SRgb</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1796132617%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="rgb-to-s-rgb.html"><span class="token function">rgbToSRgb</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">r<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">g<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">b<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-s-r-g-b/index.html">SRGB</a></div><div class="brief "><p class="paragraph">Converts RGB values to sRGB (standard RGB) color model.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-825011727%2FFunctions%2F1852433370" anchor-label="RGBtoXYZ" id="-825011727%2FFunctions%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-r-g-bto-x-y-z.html"><span>RGBto</span><wbr></wbr><span><span>XYZ</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-825011727%2FFunctions%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="-r-g-bto-x-y-z.html"><span class="token function">RGBtoXYZ</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">red<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">green<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">blue<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">scale<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">100</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.devsync.pixelpaletteandroid.model/-x-y-z/index.html">XYZ</a></div><div class="brief "><p class="paragraph">Converts RGB values to XYZ color space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2024 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

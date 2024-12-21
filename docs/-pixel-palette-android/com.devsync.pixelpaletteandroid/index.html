@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>com.devsync.pixelpaletteandroid</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    PixelPaletteAndroid
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":PixelPaletteAndroid:dokkaHtml/release">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":PixelPaletteAndroid:dokkaHtml/release"
+                                       data-filter=":PixelPaletteAndroid:dokkaHtml/release"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    PixelPaletteAndroid
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="PixelPaletteAndroid::com.devsync.pixelpaletteandroid////PointingToDeclaration//1852433370">
+  <div class="breadcrumbs"><a href="../../index.html">PixelPaletteAndroid</a><span class="delimiter">/</span><span class="current">com.devsync.pixelpaletteandroid</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1504461633%2FClasslikes%2F1852433370" anchor-label="ColorAdjustment" id="1504461633%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-adjustment/index.html"><span>Color</span><wbr></wbr><span><span>Adjustment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1504461633%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-color-adjustment/index.html">ColorAdjustment</a></div><div class="brief "><p class="paragraph">The <code class="lang-kotlin">ColorAdjustment</code> object provides methods to adjust the color properties of an image represented as a <code class="lang-kotlin">Bitmap</code>. It supports adjusting the color balance (Red, Green, Blue channels), brightness, contrast, and saturation of the image.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-566461454%2FClasslikes%2F1852433370" anchor-label="ColorAnalysis" id="-566461454%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-analysis/index.html"><span>Color</span><wbr></wbr><span><span>Analysis</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-566461454%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-color-analysis/index.html">ColorAnalysis</a></div><div class="brief "><p class="paragraph">The <code class="lang-kotlin">ColorAnalysis</code> object provides utility functions to generate color histograms from images. It includes both a sequential method and a parallelized method using Kotlin coroutines for improved performance.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2064102795%2FClasslikes%2F1852433370" anchor-label="ColorBending" id="2064102795%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-bending/index.html"><span>Color</span><wbr></wbr><span><span>Bending</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2064102795%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-color-bending/index.html">ColorBending</a></div><div class="brief "><p class="paragraph">Provides various color manipulation operations such as tinting, blending, shading, and toning of colors. These operations are based on additive and subtractive color models, and can be applied to RGB colors.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="658137337%2FClasslikes%2F1852433370" anchor-label="ColorDistance" id="658137337%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-distance/index.html"><span>Color</span><wbr></wbr><span><span>Distance</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="658137337%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-color-distance/index.html">ColorDistance</a></div><div class="brief "><p class="paragraph">The <code class="lang-kotlin">ColorDistance</code> object provides various methods to calculate different types of color distances between two colors, using different color models such as RGB, HSB/HSV, and CIE Lab. These methods allow for comparing colors based on Euclidean distance, perceptual differences, and chroma differences, among others. The distances are useful in various applications such as image processing, color matching, and color accuracy assessment.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1422328080%2FClasslikes%2F1852433370" anchor-label="ColorHarmonies" id="1422328080%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-harmonies/index.html"><span>Color</span><wbr></wbr><span><span>Harmonies</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1422328080%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-color-harmonies/index.html">ColorHarmonies</a></div><div class="brief "><p class="paragraph">A utility object that provides methods to generate various color schemes based on a base color. These color schemes are designed to help create harmonious color palettes for use in design, UI development, and other color-related tasks.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="601652789%2FClasslikes%2F1852433370" anchor-label="ColorSensitivity" id="601652789%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-sensitivity/index.html"><span>Color</span><wbr></wbr><span><span>Sensitivity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="601652789%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-color-sensitivity/index.html">ColorSensitivity</a></div><div class="brief "><p class="paragraph">The <code class="lang-kotlin">ColorSensitivity</code> object provides functions for adjusting the color sensitivity of an image. It allows modification of the Red, Green, and Blue (RGB) channels of a bitmap based on the provided sensitivity values for each color channel. The sensitivity values determine how much influence each color channel (Red, Green, Blue) has during the adjustment process.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1407115296%2FClasslikes%2F1852433370" anchor-label="PixelConversionRGB" id="1407115296%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pixel-conversion-r-g-b/index.html"><span>Pixel</span><wbr></wbr><span>Conversion</span><wbr></wbr><span><span>RGB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1407115296%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-pixel-conversion-r-g-b/index.html">PixelConversionRGB</a></div><div class="brief "><p class="paragraph">This object provides utility functions for converting RGB values to various color models and spaces. It supports conversions to Hex, CMYK, HSB, HSL, XYZ, LAB, and more. These functions are useful for applications needing color manipulation or color space conversions.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="823461500%2FClasslikes%2F1852433370" anchor-label="PixelPalette" id="823461500%2FClasslikes%2F1852433370" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":PixelPaletteAndroid:dokkaHtml/release" data-filterable-set=":PixelPaletteAndroid:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-pixel-palette/index.html"><span>Pixel</span><wbr></wbr><span><span>Palette</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="823461500%2FClasslikes%2F1852433370"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":PixelPaletteAndroid:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-pixel-palette/index.html">PixelPalette</a></div><div class="brief "><p class="paragraph">The PixelPalette object provides methods to analyze and extract dominant colors from an image using K-means clustering. It allows for downscaling the image to improve performance, followed by the identification of the most prominent colors. Additionally, the object can generate a color palette image based on the extracted dominant colors.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2024 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

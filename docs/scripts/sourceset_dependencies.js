@@ -1,0 +1,1 @@
+sourceset_dependencies='{":PixelPaletteAndroid:dokkaHtml/debug":[],":PixelPaletteAndroid:dokkaHtml/main":[],":PixelPaletteAndroid:dokkaHtml/release":[]}'
