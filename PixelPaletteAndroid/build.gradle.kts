@@ -3,8 +3,9 @@ import com.vanniktech.maven.publish.SonatypeHost
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("com.vanniktech.maven.publish") version "0.30.0"
-    id("com.gradleup.nmcp") version "0.0.7" apply false
+    alias(libs.plugins.maven.publish)
+    alias(libs.plugins.gradle.up)
+    alias(libs.plugins.dokka)
 }
 
 android {
@@ -21,7 +22,6 @@ android {
         release {
             isMinifyEnabled = true
             isJniDebuggable = false
-            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -40,7 +40,7 @@ android {
 }
 
 mavenPublishing {
-    coordinates("io.github.developersyndicate", "PixelPaletteAndroid", "1.0.0")
+    coordinates("io.github.developersyndicate", "PixelPaletteAndroid", "1.0.2")
 
     pom {
         name.set("Pixel Palette JVM")
@@ -73,9 +73,4 @@ mavenPublishing {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

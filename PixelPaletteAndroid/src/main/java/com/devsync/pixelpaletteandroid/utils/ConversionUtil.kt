@@ -38,7 +38,7 @@ internal fun rgbToLab(r: Int, g: Int, b: Int): Triple<Double, Double, Double> {
 
     fun gammaCorrect(c: Double): Double {
         return if (c > 0.04045) {
-            Math.pow((c + 0.055) / 1.055, 2.4)
+            ((c + 0.055) / 1.055).pow(2.4)
         } else {
             c / 12.92
         }
